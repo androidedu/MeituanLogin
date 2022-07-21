@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity() {
 
         //加载用户信息
         model.loadData(this)
-        model.updateState(this,false)
+        //model.updateState(this,false)
+        binding.floatingActionButton.setOnClickListener {
+          model.saveData(this,User("1","2","3",true))
+        }
     }
 }

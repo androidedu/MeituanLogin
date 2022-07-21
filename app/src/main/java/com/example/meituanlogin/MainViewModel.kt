@@ -9,7 +9,9 @@ class MainViewModel: ViewModel() {
     val user = MutableLiveData(User())
 
     fun loadData(context: Context){
-        DataStoreUtil.loadUser(context)
+        val userInfo = DataStoreUtil.loadUser(context)
+        //更新liveData的数据
+        user.postValue(userInfo)
     }
 
     fun saveData(context: Context,aUser: User){
